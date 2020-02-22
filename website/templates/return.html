@@ -1,0 +1,59 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='return.css') }}">
+<div class="card">
+    <div class="card-header"
+  style="background-image: url({{ artistpfp }}) "
+    >
+
+
+          <div class="card-header-slanted-edge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path class="polygon" d="M-20,200,1000,0V200Z" /></svg>
+          </div>
+    </div>
+
+    <div class="card-body">
+        <h2 class="name">{{ song }}</h2>
+        <h4 class="job-title">A song by {{ artist }}</h4>
+        <div class="bio">
+                            Song Name : {{ song }} <br>
+                            Artist : {{ artist }} <br>
+                            Album Name : {{ album }} <br>
+                            Duration : {{ duration }} minutes <br>
+                            Popularity Rating : {{ rating }} <br>
+                            Artist Page : {{ artistlink}} <br>
+                            Estimated Track Earnings: $ {{ earnings }}
+        </div>
+    </div>
+    <table class="">
+      
+        <tr>
+          <th>Date Accessed</th>
+          <th>Playcount</th>
+          <th>Followers</th>
+        </tr>
+        {% for date in dates %}
+        <tr>
+          <td>{{ date.date }}</td>
+          <td>{{ date.playcnt }}</td>
+          <td>{{ date.followers }}</td>
+        </tr>
+     
+    {% endfor %}
+    </table> 
+    <div class="card-footer">
+        <div class="stats">
+            <div class="stat">
+              <span class="label">{{ artist }}'s Followers</span>
+              <span class="value">{{ followers }}</span>
+            </div>
+            <div class="stat">
+              <span class="label">{{ song }}'s Play Count</span>
+              <span class="value">{{ playcount }}</span>
+            </div>
+            <div class="stat">
+              <span class="label">{{ artist }}'s All Time Listens</span>
+              <span class="value">{{ totalplays }}</span>
+            </div>
+        </div>
+    </div>
+</div>

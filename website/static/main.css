@@ -1,0 +1,125 @@
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%; }
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s; }
+  .form__field::placeholder {
+    color: transparent; }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px; }
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b; }
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1; }
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700; }
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none; }
+
+/* demo */
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222; }
+
+
+
+  .logo {
+    font: 84px 'Arial Narrow', sans-serif;/* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
+    color: #fefefe;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+  }
+  
+  /* stuff for both words */
+  .logo span {
+    position: relative;
+  }
+  .logo span:before,
+  .logo span:after {
+    content: '';
+    position: absolute;
+    border-width: 32px;/* makes a nice, big 64px square */
+    border-style: solid;
+    border-color: transparent;
+    height: 0;
+    z-index: 10;
+  }
+  
+  /* stuff for 1st word */
+  .logo .word1 {
+    color: #dc006c;
+    margin-right: -38px;
+    transform: rotateY(180deg);/* using Prefix free */
+    display: inline-block;/* required for transform */
+    z-index: 10;/* stack 1st word on top */
+  }
+  .logo .word1:before {
+    right: -4px;/* would be left, but we flipped the word */
+    top: -9px;
+    border-top-color: #282828;/* match background color */
+    border-right-color: #282828;/* would be left, but we flipped the word */
+  }
+  .logo .word1:after {
+    left: 17px;/* would be right, but we flipped the word */
+    bottom: -15px;
+    border-bottom-color: #282828;
+    border-left-color: #282828;/* would be right, but we flipped the word */
+  }
+  
+  /* stuff for 2nd word */
+  .logo .word2 {
+    z-index: 0;/* stack 2nd word below */
+  }
+  .logo .word2:before {
+    left: -4px;
+    top: -6px;
+    border-top-color: #282828;
+    border-left-color: #282828;
+  }
+  .logo .word2:after {
+    right: -4px;  
+    bottom: 4px;
+    border-bottom-color: #282828;
+    border-right-color: #282828;
+  }
+  
+/*# sourceMappingURL=main.css.map */
